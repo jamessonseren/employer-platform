@@ -1,0 +1,92 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form input,
+.form textarea,
+.form select {
+    padding: 10px;
+    border: 2px solid #2e374a;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.form input::placeholder {
+    color: var(--text);
+}
+
+.inputBox {
+    width: 100%;
+}
+
+.inputBox label {
+    margin-bottom: 5px;
+}
+
+
+
+.grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 1rem;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 1rem;
+}
+
+.errorMessage {
+    color: red;
+
+}
+
+.passwordButton {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all .8s;
+    width: 100%;
+}
+
+.passwordButton:hover {
+    text-decoration: underline;
+}
+
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons>button {
+    width: 100%;
+    padding: 1rem;
+    max-width: 200px;
+    background-color: var(--text);
+    color: var(--bg);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+
+    .form {
+        flex-direction: column;
+    }
+
+    .grid1,
+    .grid2 {
+        display: flex;
+        flex-direction: column;
+    }
+}
