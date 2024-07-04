@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { auth } from "../../lib/auth"
-import General from "@/components/Dashboard/Graphs/general"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Calendar from "@/components/Dashboard/Graphs/calendar"
 import Lines from "@/components/Dashboard/Graphs/lines"
