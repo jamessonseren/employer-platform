@@ -40,7 +40,6 @@ export default function ProfileForm(props: UserInfoProps) {
     const handleSubmitFirstSignIn = async (formData: FormData) => {
 
         const response = await updateCompanyUserDetails(formData)
-        console.log(response.error)
         if (response.status === 200) {
             toast.success("Dados atualizados com sucesso")
             await signOut()

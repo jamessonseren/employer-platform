@@ -17,8 +17,6 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { TableDemo } from "../../Graphs/table"
-import { DataTableDemo } from "../../Graphs/dataTable"
 import Link from "next/link"
 
 export function BenefitsTabs() {
@@ -45,12 +43,11 @@ export function BenefitsTabs() {
         }
     ]
     return (
-        <Tabs defaultValue="benefits" className="w-full grow">
-            <TabsList className="grid grow grid-cols-3 ">
+        <Tabs defaultValue="benefits" className="w-full flex flex-col">
+            <TabsList className="grid grow lg:grid-cols-3 max-lg:mb-12 ">
                 <TabsTrigger value="benefits">Meus multibenefícios</TabsTrigger>
                 <TabsTrigger value="allBenefits">Todos os multibenefícios</TabsTrigger>
                 <TabsTrigger value="advantage">Clube de vantagens</TabsTrigger>
-
             </TabsList>
             <TabsContent value="benefits" className="grid lg:grid-cols-3 gap-[32px]">
                 {benefitsData.map((benefit) => (

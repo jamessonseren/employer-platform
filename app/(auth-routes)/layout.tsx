@@ -1,6 +1,7 @@
 'use client'
 
 import { ReactNode } from "react";
+import { EmployeesProvider } from "../contexts/employeeContexts";
 
 interface PrivateLayoutProps {
     children: ReactNode
@@ -9,7 +10,7 @@ interface PrivateLayoutProps {
 
 export default function PrivateLayout({ children }: PrivateLayoutProps) {
 
-    return <>
+    return <EmployeesProvider>
         {children}
-    </>
+    </EmployeesProvider>
 }

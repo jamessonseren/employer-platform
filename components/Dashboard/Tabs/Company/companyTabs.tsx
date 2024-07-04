@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/tooltip"
 import Image from "next/image"
 
-import { useSession } from "next-auth/react"
 import CompanyDataForm from "@/components/Forms/Company/companyForm"
 
 enum BusinessStatus {

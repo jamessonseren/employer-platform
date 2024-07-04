@@ -1,0 +1,41 @@
+[
+    {
+        "uuid": "1",
+        "img": "https://example.com/avatar1.png",
+        "is_admin": true,
+        "user_name": "john_doe",
+        "document": "123456789",
+        "permissions": ["sales"],
+        "email": "john.doe@example.com",
+        "function": "CEO",
+        "status": "active",
+        "token": "abcdef123456",
+        "createdAt": "2024-06-26T09:24:39"
+    },
+    {
+        "uuid": "2",
+        "img": null,
+        "is_admin": false,
+        "user_name": "jane_smith",
+        "document": null,
+        "permissions": ["sales", "finances"],
+        "email": "jane.smith@example.com",
+        "function": "Sales Manager",
+        "status": "inactive",
+        "token": "xyz987654321",
+        "createdAt": "2023-02-20T13:30:00Z"
+    },
+    {
+        "uuid": "3",
+        "img": "https://example.com/avatar3.png",
+        "is_admin": false,
+        "user_name": "mike_jones",
+        "document": "987654321",
+        "permissions": ["finances"],
+        "email": "mike.jones@example.com",
+        "function": "Accountant",
+        "status": "pending",
+        "token": "pqr456789012",
+        "createdAt": "2023-03-10T08:45:00Z"
+    }
+]
