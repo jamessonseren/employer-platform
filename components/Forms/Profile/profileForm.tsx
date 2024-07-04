@@ -118,7 +118,7 @@ export default function ProfileForm(props: UserInfoProps) {
         if (props.status === "pending_password") {
             setPasswordIsVisible(true)
         }
-    }, [])
+    })
 
     function editPassword() {
         if (!passwordFieldIsVisible) {

@@ -4,6 +4,7 @@ import "./globals.css";
 import AuthWrapper from "./auth_wrapper";
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
 
         </AuthWrapper>
 
-        <script src="https://app.aminos.ai/js/chat_form_plugin.js" data-bot-id="27177"></script>
+        <Script src="https://app.aminos.ai/js/chat_form_plugin.js" data-bot-id="27177"></Script>
       </body>
     </html>
   );

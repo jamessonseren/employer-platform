@@ -1,5 +1,3 @@
-'use client'
-
 import { InputHTMLAttributes, SelectHTMLAttributes, TextareaHTMLAttributes, useState, forwardRef } from 'react'
 import styles from './formsInput.module.css'
 import { IMaskInput } from 'react-imask'
@@ -37,13 +35,14 @@ interface MultiSelectProps {
     id?: string
 }
 
-
 export function Select({ ...rest }: SelectProps) {
     return (
         <select className={styles.input} {...rest} >
         </select>
     )
 }
+Select.displayName = "Select";
+
 export const MultiSelect: React.FC<MultiSelectProps> = ({ options, selectedValues, onChange, searchText }) => {
     const [searchTerm, setSearchTerm] = useState<string>("");
 
@@ -94,10 +93,12 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({ options, selectedValue
         </div>
     );
 };
+MultiSelect.displayName = "MultiSelect";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     return <input ref={ref} {...props} className={styles.input} />;
 });
+Input.displayName = "Input";
 
 export function DateSelect(props: CustomInputProps) {
     const [selectedDate, setSelectedDate] = useState<Date | null>(null)
@@ -121,6 +122,7 @@ export function DateSelect(props: CustomInputProps) {
         </div>
     )
 }
+DateSelect.displayName = "DateSelect";
 
 export function MaskedDocumentInput(props: CustomInputProps) {
     return (
@@ -137,11 +139,11 @@ export function MaskedDocumentInput(props: CustomInputProps) {
             defaultValue={props.defaultValue}
             style={{
                 backgroundColor: !props.readOnly ? '' : 'rgba(101, 98, 143, 0.219)',
-
             }}
         />
     )
 }
+MaskedDocumentInput.displayName = "MaskedDocumentInput";
 
 export function MaskedPhoneInput(props: CustomInputProps) {
     return (
@@ -157,6 +159,7 @@ export function MaskedPhoneInput(props: CustomInputProps) {
         />
     )
 }
+MaskedPhoneInput.displayName = "MaskedPhoneInput";
 
 export function MaskedZipInput(props: CustomInputProps) {
     return (
@@ -172,8 +175,11 @@ export function MaskedZipInput(props: CustomInputProps) {
         />
     )
 }
+MaskedZipInput.displayName = "MaskedZipInput";
+
 export function TextArea({ ...rest }: TextAreaProps) {
     return (
         <textarea className={styles.input} {...rest}></textarea>
     )
 }
+TextArea.displayName = "TextArea";
