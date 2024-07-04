@@ -1,7 +1,7 @@
 import { Groups, columns } from "@/components/Dashboard/Tables/Groups/columns"
 import { DataTable } from "@/components/Dashboard/Tables/Groups/data-table"
 
-export const data:Groups[] = [
+const data:Groups[] = [
     {
         uuid: '1',
         benefit:'',
