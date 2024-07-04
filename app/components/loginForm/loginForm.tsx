@@ -12,13 +12,16 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { HiIdentification } from "react-icons/hi2";
 import { MdAlternateEmail } from "react-icons/md";
 import Image from 'next/image';
+import { ButtonComp } from '@/components/FormsInput/Button/button';
+import { useState } from 'react';
 
 
 export default function Home() {
   const router = useRouter()
+  const [loading, setLoading] = useState(false)
 
   async function login(formData: FormData) {
-
+    setLoading(true)
 
     const { business_document, credential, password } = Object.fromEntries(formData)
     if (!business_document || !credential || !password) {
@@ -48,15 +51,20 @@ export default function Home() {
         redirect: false
       })
 
+      
 
       if (result?.error) {
         router.replace('/')
+        setLoading(false)
+
         return
       }
+      setLoading(false)
 
 
       router.replace('/dashboard')
     } catch (err: any) {
+      setLoading(false)
 
       console.log("Login error: ", err)
     }
@@ -125,12 +133,9 @@ export default function Home() {
               </span>
             </div>
 
-            <button
-              type='submit'
-              className={styles.buttonLogin}
-            >
+            <ButtonComp loading={loading} style={{width: '100%'}}>
               Entrar
-            </button>
+            </ButtonComp>
 
           </form>
 

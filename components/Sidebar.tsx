@@ -50,7 +50,7 @@ export default function SideBar() {
 
                 {
                     title: "Usuários",
-                    path: "/dashboard/usuarios",
+                    path: "/dashboard/minha-equipe",
                     icon: <Boxes />,
                 },
 
@@ -62,7 +62,7 @@ export default function SideBar() {
 
                 {
                     title: "Lista",
-                    path: "/dashboard/colaboradores/lista",
+                    path: "/dashboard/colaboradores",
                     icon: <Pickaxe />,
                 },
                 {
@@ -95,7 +95,7 @@ export default function SideBar() {
 
 
     return (
-        <div className="fixed flex flex-col w-[300px] min-w-[300px] h-screen p-4 bg-soft ">
+        <div className="fixed flex flex-col w-[80%] max-w-[300px] h-screen p-4 bg-soft ">
             <div>
                 <UserItem />
             </div>
@@ -106,7 +106,7 @@ export default function SideBar() {
                         {menuItems.map((cat, index) => (
                             <CommandGroup key={index} heading={cat.title} >
                                 {cat.list.map((item, itemIndex) => (
-                                    <Link href={item.path}>
+                                    <Link href={item.path} key={itemIndex}>
                                         <CommandItem key={itemIndex} className="flex gap-2 cursor-pointer">
                                             {item.icon}
                                             {item.title}

@@ -183,3 +183,40 @@ export async function fetchCompanyData() {
 
 
 }
+
+
+export async function fetchEmployees(){
+  const api = await setupAPIClient()
+  const session = await auth()
+
+  if(!session) return { status: 500, data: "Not logged in"}
+
+  try{
+    const response = await api.get('/business-admin/app-users/')
+
+    return { status: response.status, data: response.data}
+  }catch(err: any){
+    if (err.response) return {data: err.response.data, status: err.response.data.error}
+      
+    return { status: '', data: ''}
+
+  }
+}
+
+export async function fetchSingleEmployee(employeeId: string){
+  const api = await setupAPIClient()
+  const session = await auth()
+
+  if(!session) return { status: 500, data: "Not logged in"}
+
+  try{
+    const response = await api.get(`/app-user/business-admin?employeeId=${employeeId}`)
+
+    return { status: response.status, data: response.data}
+  }catch(err: any){
+    if (err.response) return {data: err.response.data, status: err.response.data.error}
+      
+    return { status: '', data: ''}
+
+  }
+}

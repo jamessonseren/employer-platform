@@ -36,18 +36,18 @@ export default function Header() {
     return (
         <div className="grid grid-cols-2 gap-4 border-b pb-2">
 
-            <CommandMenu />
+            <div></div>
 
             <div className="flex items-center justify-end gap-4">
 
                 <DropdownMenu>
                     <DropdownMenuTrigger>
-                        <Button className="relative" variant="outline" size="icon">
+                        <div className="relative" >
                             <div className={`absolute -top-2 -right-2 h-3 w-3 rounded-full my-1 ${notifications.find((item) => item.read === true) ? 'bg-red-500' : 'bg-green-500'}`}>
                             </div>
                             <BellIcon className="h-4 w-4" />
 
-                        </Button>
+                        </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                         {notifications.map((item, index) =>
@@ -61,10 +61,10 @@ export default function Header() {
                 </DropdownMenu>
                 <DropdownMenu>
                     <DropdownMenuTrigger>
-                        <Button className="relative" variant="outline" size="icon">
-                            <Settings />
 
-                        </Button>
+                        <Settings />
+
+
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="align=end">
                         <Link href="/dashboard/settings/profile">
@@ -74,16 +74,18 @@ export default function Header() {
                             </DropdownMenuItem>
                         </Link>
                         <Link href="/dashboard/company">
-                        <DropdownMenuItem className="py-2 px-3 cursor-pointer hover:bg-neutral-50 transition flex items-start gap-2">
-                            <Building2 className="size-4" />
-                            <p>Minha empresa</p>
-                        </DropdownMenuItem>
+                            <DropdownMenuItem className="py-2 px-3 cursor-pointer hover:bg-neutral-50 transition flex items-start gap-2">
+                                <Building2 className="size-4" />
+                                <p>Minha empresa</p>
+                            </DropdownMenuItem>
+                        </Link>
+                        <Link href="/dashboard/suporte">
+                            <DropdownMenuItem className="py-2 px-3 cursor-pointer hover:bg-neutral-50 transition flex items-start gap-2">
+                                <HandHelping className="size-4" />
+                                <p>Suporte</p>
+                            </DropdownMenuItem>
                         </Link>
                         <DropdownMenuItem className="py-2 px-3 cursor-pointer hover:bg-neutral-50 transition flex items-start gap-2">
-                            <HandHelping className="size-4" />
-                            <p>Suporte</p>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="py-2 px-3 cursor-pointer hover:bg-neutral-50 transition flex items-start gap-2">   
                             <LogOutButton />
                         </DropdownMenuItem>
                     </DropdownMenuContent>

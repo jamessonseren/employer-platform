@@ -6,17 +6,20 @@
     overflow: hidden;
 }
 
-.activeSidebar,
-.menuButton {
+.activeSidebar{
     display: none;
 }
 
+.menuButton {
+   visibility: hidden;
+   
+}
+
 .menu {
-    flex: 1;
     margin-right: 2rem;
     overflow-x: hidden;
-    width: 200px;
-    min-width: 200px;
+    width: 80%;
+    max-width: 300px;
 }
 
 .content {
@@ -25,29 +28,28 @@
     flex-direction: column;
     flex: 4;
     height: 100vh;
-    padding: 1rem;
 }
 
-.content > .children{
-    flex: 1;
-}
 
-@media (max-width: 780px) {
+
+@media (max-width: 768px) {
+    .menuButton {
+        visibility: visible;
+    }
+
     .menu {
-        width: 300px;
         position: fixed;
         height: 100%;
         top: 0;
-        left: 0;
+        left: -300px;
         overflow: auto;
         scrollbar-width: 3px;
-        left: -120vw;
         z-index: 99;
+        transition: left 0.2s;
     }
 
     .menuButton {
         cursor: pointer;
-        background-color: #212d49;
         opacity: 0.8;
         padding: .5rem;
         display: flex;
@@ -55,29 +57,31 @@
         justify-content: center;
         position: fixed;
         border-radius: 0 5px 5px 0;
-        height: 5rem;
+        height: 3rem;
         width: 1.5rem;
-        top: 5px;
-        transition: 0.2s;
+        top: 0;
+        transition: left 0.2s;
         left: 0;
+        z-index: 100;
     }
 
     .menuButton svg {
         cursor: pointer;
         height: 60%;
         transform: rotate(180deg);
+        transition: transform 0.2s;
     }
 
-    .activeSidebar:checked~.menuButton svg {
+    .activeSidebar:checked ~ .menuButton svg {
         transform: rotate(0deg);
     }
 
-    .activeSidebar:checked~.menu {
+    .activeSidebar:checked ~ .menu {
         left: 0;
     }
 
-    .activeSidebar:checked~.menuButton {
-        left: 300px;
+    .activeSidebar:checked ~ .menuButton {
+        visibility: hidden;
     }
 
     .content {
@@ -109,5 +113,4 @@
     flex: 1;
     display: flex;
     margin-top: 2rem;
-
 }

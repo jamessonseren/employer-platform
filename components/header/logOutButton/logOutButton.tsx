@@ -18,7 +18,7 @@ export default function LogOutButton() {
     return (
         <button className={styles.logout} onClick={logOut}>
             <LogOut className="size-4" />
-            Logout
+            Sair
         </button>
     )
 }
