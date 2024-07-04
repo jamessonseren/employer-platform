@@ -35,7 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
         return () => {
             document.removeEventListener('click', closeMenu);
         };
-    }, [menuOpen]);
+    }, [menuOpen, closeMenu]);
 
     return (
 

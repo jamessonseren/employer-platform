@@ -72,7 +72,7 @@ export function BenefitsTabs() {
                 </Card> */}
             </TabsContent>
 
-            <TabsContent value="password">
+            {/* <TabsContent value="password">
                 <Card>
                     <CardHeader>
                         <CardTitle>Password</CardTitle>
@@ -94,7 +94,7 @@ export function BenefitsTabs() {
                         <Button>Save password</Button>
                     </CardFooter>
                 </Card>
-            </TabsContent>
+            </TabsContent> */}
         </Tabs>
     )
 }

@@ -54,7 +54,7 @@ export function TabsDemo() {
                 </Card>
             </TabsContent>
 
-            <TabsContent value="password">
+            {/* <TabsContent value="password">
                 <Card>
                     <CardHeader>
                         <CardTitle>Password</CardTitle>
@@ -76,7 +76,7 @@ export function TabsDemo() {
                         <Button>Save password</Button>
                     </CardFooter>
                 </Card>
-            </TabsContent>
+            </TabsContent> */}
         </Tabs>
     )
 }
